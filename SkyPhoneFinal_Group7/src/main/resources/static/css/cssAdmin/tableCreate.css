@@ -1,0 +1,423 @@
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+		ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+		.15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+}
+
+input[type=search]:focus {
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+		rgba(102, 175, 233, .6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+		rgba(102, 175, 233, .6)
+}
+
+input[type=search] {
+	-webkit-appearance: none;
+	margin-left: 15px;
+	border: 1px solid #cfcfcf;
+	height: 35px;
+	border-radius: 5px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	input[type=date], input[type=time], input[type=datetime-local], input[type=month]
+		{
+		line-height: 34px
+	}
+	.input-group-sm input[type=date], .input-group-sm input[type=time],
+		.input-group-sm input[type=datetime-local], .input-group-sm input[type=month],
+		input[type=date].input-sm, input[type=time].input-sm, input[type=datetime-local].input-sm,
+		input[type=month].input-sm {
+		line-height: 30px
+	}
+	.input-group-lg input[type=date], .input-group-lg input[type=time],
+		.input-group-lg input[type=datetime-local], .input-group-lg input[type=month],
+		input[type=date].input-lg, input[type=time].input-lg, input[type=datetime-local].input-lg,
+		input[type=month].input-lg {
+		line-height: 46px;
+	}
+}
+
+select[multiple].input-lg, textarea.input-lg {
+	height: auto
+}
+
+@media ( min-width :768px) {
+	.form-inline .form-group {
+		display: inline-block;
+		margin-bottom: 0;
+		vertical-align: middle
+	}
+	.form-inline .form-control {
+		display: inline-block;
+		width: auto;
+		vertical-align: middle
+	}
+	.form-inline .form-control-static {
+		display: inline-block
+	}
+	.form-inline .input-group {
+		display: inline-table;
+		vertical-align: middle
+	}
+	.form-inline .input-group .form-control, .form-inline .input-group .input-group-addon,
+		.form-inline .input-group .input-group-btn {
+		width: auto
+	}
+	.form-inline .input-group>.form-control {
+		width: 100%
+	}
+	.form-inline .control-label {
+		margin-bottom: 0;
+		vertical-align: middle
+	}
+	.form-inline .checkbox, .form-inline .radio {
+		display: inline-block;
+		margin-top: 0;
+		margin-bottom: 0;
+		vertical-align: middle
+	}
+	.form-inline .checkbox label, .form-inline .radio label {
+		padding-left: 0
+	}
+	.form-inline .checkbox input[type=checkbox], .form-inline .radio input[type=radio]
+		{
+		position: relative;
+		margin-left: 0
+	}
+	.form-inline .has-feedback .form-control-feedback {
+		top: 0
+	}
+}
+
+.pagination {
+	display: inline-block;
+	padding-left: 0;
+	margin: 20px 0;
+	border-radius: 4px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pagination>li {
+	display: inline
+}
+
+.pagination>li>a, .pagination>li>span {
+	position: relative;
+	float: left;
+	padding: 6px 12px;
+	margin-left: -1px;
+	line-height: 1.42857143;
+	color: #337ab7;
+	text-decoration: none;
+	background-color: #fff;
+	border: 1px solid #ddd
+}
+
+.pagination>li:first-child>a, .pagination>li:first-child>span {
+	margin-left: 0;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px
+}
+
+.pagination>li:last-child>a, .pagination>li:last-child>span {
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px
+}
+
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus,
+	.pagination>li>span:hover {
+	color: #23527c;
+	background-color: #eee;
+	border-color: #ddd
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover,
+	.pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover
+	{
+	z-index: 2;
+	color: #fff;
+	cursor: default;
+	background-color: #337ab7;
+	border-color: #337ab7
+}
+
+.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover,
+	.pagination>.disabled>span, .pagination>.disabled>span:focus,
+	.pagination>.disabled>span:hover {
+	color: #777;
+	cursor: not-allowed;
+	background-color: #fff;
+	border-color: #ddd
+}
+
+.pagination-lg>li>a, .pagination-lg>li>span {
+	padding: 10px 16px;
+	font-size: 18px
+}
+
+.pagination-lg>li:first-child>a, .pagination-lg>li:first-child>span {
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px
+}
+
+.pagination-lg>li:last-child>a, .pagination-lg>li:last-child>span {
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px
+}
+
+.pagination-sm>li>a, .pagination-sm>li>span {
+	padding: 5px 10px;
+	font-size: 12px
+}
+
+.pagination-sm>li:first-child>a, .pagination-sm>li:first-child>span {
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px
+}
+
+.pagination-sm>li:last-child>a, .pagination-sm>li:last-child>span {
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px
+}
+div.dataTables_length label {
+	float: left;
+	text-align: left;
+	font-weight: normal;
+}
+
+div.dataTables_length select {
+	width: 75px;
+	width: 115px;
+	background: white;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #d5d5d5;
+	margin-left:10px;
+}
+
+div.dataTables_filter label {
+	float: right;
+	font-weight: normal;
+}
+
+div.dataTables_filter input {
+	width: 16em;
+}
+
+div.dataTables_info {
+	padding-top: 8px;
+}
+
+div.dataTables_paginate {
+	float: right;
+	margin: 0;
+}
+
+div.dataTables_paginate ul.pagination {
+	margin: 2px 0;
+	white-space: nowrap;
+}
+
+table.dataTable, table.dataTable td, table.dataTable th {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+table.dataTable {
+	clear: both;
+	margin-top: 6px !important;
+	margin-bottom: 6px !important;
+	max-width: none !important;
+}
+
+table.dataTable thead .sorting, table.dataTable thead .sorting_asc,
+	table.dataTable thead .sorting_desc, table.dataTable thead .sorting_asc_disabled,
+	table.dataTable thead .sorting_desc_disabled {
+	cursor: pointer;
+}
+
+table.dataTable thead .sorting {
+	background: url('../images/sort_both.png') no-repeat center right;
+}
+
+table.dataTable thead .sorting_asc {
+	background: url('../images/sort_asc.png') no-repeat center right;
+}
+
+table.dataTable thead .sorting_desc {
+	background: url('../images/sort_desc.png') no-repeat center right;
+}
+
+table.dataTable thead .sorting_asc_disabled {
+	background: url('../images/sort_asc_disabled.png') no-repeat center
+		right;
+}
+
+table.dataTable thead .sorting_desc_disabled {
+	background: url('../images/sort_desc_disabled.png') no-repeat center
+		right;
+}
+
+table.dataTable th:active {
+	outline: none;
+}
+
+/* Scrolling */
+div.dataTables_scrollHead table {
+	margin-bottom: 0 !important;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+div.dataTables_scrollHead table thead tr:last-child th:first-child, div.dataTables_scrollHead table thead tr:last-child td:first-child
+	{
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+
+div.dataTables_scrollBody table {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	border-top: none;
+}
+
+div.dataTables_scrollBody tbody tr:first-child th, div.dataTables_scrollBody tbody tr:first-child td
+	{
+	border-top: none;
+}
+
+div.dataTables_scrollFoot table {
+	margin-top: 0 !important;
+	border-top: none;
+}
+
+/*
+ * TableTools styles
+ */
+.table tbody tr.active td, .table tbody tr.active th {
+	color: white;
+	background-color: #08C;
+}
+
+.table tbody tr.active:hover td, .table tbody tr.active:hover th {
+	background-color: #0075b0 !important;
+}
+
+.table tbody tr.active a {
+	color: white;
+}
+
+.table-striped tbody tr.active:nth-child(odd) td, .table-striped tbody tr.active:nth-child(odd) th
+	{
+	background-color: #017ebc;
+}
+
+table.DTTT_selectable tbody tr {
+	cursor: pointer;
+}
+
+div.DTTT .btn {
+	font-size: 12px;
+	color: #333 !important;
+}
+
+div.DTTT .btn:hover {
+	text-decoration: none !important;
+}
+
+ul.DTTT_dropdown.dropdown-menu {
+	z-index: 2003;
+}
+
+ul.DTTT_dropdown.dropdown-menu a {
+	color: #333 !important;
+	/* needed only when demo_page.css is included */
+}
+
+ul.DTTT_dropdown.dropdown-menu li {
+	position: relative;
+}
+
+ul.DTTT_dropdown.dropdown-menu li:hover a {
+	color: white !important;
+	background-color: #0088cc;
+}
+
+div.DTTT_collection_background {
+	z-index: 2002;
+}
+
+/* TableTools information display */
+div.DTTT_print_info.modal {
+	height: 150px;
+	margin-top: -75px;
+	text-align: center;
+}
+
+div.DTTT_print_info h6 {
+	margin: 1em;
+	font-size: 28px;
+	font-weight: normal;
+	line-height: 28px;
+}
+
+div.DTTT_print_info p {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+/*
+ * FixedColumns styles
+ */
+div.DTFC_LeftHeadWrapper table, div.DTFC_LeftFootWrapper table, div.DTFC_RightHeadWrapper table,
+	div.DTFC_RightFootWrapper table, table.DTFC_Cloned tr.even {
+	background-color: white;
+}
+
+div.DTFC_RightHeadWrapper table, div.DTFC_LeftHeadWrapper table {
+	margin-bottom: 0 !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+
+div.DTFC_RightHeadWrapper table thead tr:last-child th:first-child, div.DTFC_RightHeadWrapper table thead tr:last-child td:first-child,
+	div.DTFC_LeftHeadWrapper table thead tr:last-child th:first-child, div.DTFC_LeftHeadWrapper table thead tr:last-child td:first-child
+	{
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+
+div.DTFC_RightBodyWrapper table, div.DTFC_LeftBodyWrapper table {
+	margin-bottom: 0 !important;
+	border-top: none;
+}
+
+div.DTFC_RightBodyWrapper tbody tr:first-child th, div.DTFC_RightBodyWrapper tbody tr:first-child td,
+	div.DTFC_LeftBodyWrapper tbody tr:first-child th, div.DTFC_LeftBodyWrapper tbody tr:first-child td
+	{
+	border-top: none;
+}
+
+div.DTFC_RightFootWrapper table, div.DTFC_LeftFootWrapper table {
+	border-top: none;
+}

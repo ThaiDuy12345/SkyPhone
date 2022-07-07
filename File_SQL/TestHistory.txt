@@ -1,0 +1,20 @@
+GO
+SET IDENTITY_INSERT [dbo].[HDChiTiet] ON 
+
+INSERT [dbo].[HDChiTiet] ([stt], [so_luong_don], [tong_gia_dct], [sdt_nguoi_nhan], [id_hd], [id_dt]) VALUES (2, 1, 10000.0000, N'0765230162', N'001', N'005794BD-DF0F-4457-9763-1E9BCBE3148D')
+INSERT [dbo].[HDChiTiet] ([stt], [so_luong_don], [tong_gia_dct], [sdt_nguoi_nhan], [id_hd], [id_dt]) VALUES (3, 1, 20000.0000, N'0123456789', N'002', N'03C47C01-A3B3-48C9-AF8C-EEAEF4A2AF98')
+INSERT [dbo].[HDChiTiet] ([stt], [so_luong_don], [tong_gia_dct], [sdt_nguoi_nhan], [id_hd], [id_dt]) VALUES (5, 1, 23000.0000, N'0765230162', N'003', N'10BAF7E7-D3B6-4778-A9E9-40CFCBEE4113')
+INSERT [dbo].[HDChiTiet] ([stt], [so_luong_don], [tong_gia_dct], [sdt_nguoi_nhan], [id_hd], [id_dt]) VALUES (6, 1, 30000.0000, N'0765230162', N'004', N'11DAA8F1-64E1-4A21-BB61-36B93415119C')
+INSERT [dbo].[HDChiTiet] ([stt], [so_luong_don], [tong_gia_dct], [sdt_nguoi_nhan], [id_hd], [id_dt]) VALUES (7, 1, 40000.0000, N'0987654321', N'005', N'1A893F1D-EC22-4A8D-BF2D-E54F90F379FE')
+INSERT [dbo].[HDChiTiet] ([stt], [so_luong_don], [tong_gia_dct], [sdt_nguoi_nhan], [id_hd], [id_dt]) VALUES (9, 1, 50000.0000, N'0987654321', N'006', N'20B9BEAB-A4DC-48AD-9698-CDDDE994B246')
+INSERT [dbo].[HDChiTiet] ([stt], [so_luong_don], [tong_gia_dct], [sdt_nguoi_nhan], [id_hd], [id_dt]) VALUES (10, 1, 600000.0000, N'0987654321', N'007', N'30492910-35AC-46B8-AB58-3D4441D431CF')
+SET IDENTITY_INSERT [dbo].[HDChiTiet] OFF
+GO
+INSERT [dbo].[HoaDon] ([id_hd], [nguoi_thanh_toan], [so_luong_don], [tong_gia], [dia_chi_gui], [ten_nguoi_nhan], [sdt_nguoi_nhan], [dia_chi_nhan], [ngay_tao_don], [tinh_trang]) VALUES (N'001', N'Huy', 1, 10000, N'240', N'Huy', N'0765230162', N'240', CAST(N'2003-12-04' AS Date), 1)
+INSERT [dbo].[HoaDon] ([id_hd], [nguoi_thanh_toan], [so_luong_don], [tong_gia], [dia_chi_gui], [ten_nguoi_nhan], [sdt_nguoi_nhan], [dia_chi_nhan], [ngay_tao_don], [tinh_trang]) VALUES (N'002', N'Na', 1, 20000, N'250', N'Na', N'0123456789', N'250', CAST(N'2020-12-02' AS Date), 1)
+INSERT [dbo].[HoaDon] ([id_hd], [nguoi_thanh_toan], [so_luong_don], [tong_gia], [dia_chi_gui], [ten_nguoi_nhan], [sdt_nguoi_nhan], [dia_chi_nhan], [ngay_tao_don], [tinh_trang]) VALUES (N'003', N'Huy', 1, 23000, N'240', N'Huy', N'0765230162', N'240', CAST(N'2003-12-04' AS Date), 0)
+INSERT [dbo].[HoaDon] ([id_hd], [nguoi_thanh_toan], [so_luong_don], [tong_gia], [dia_chi_gui], [ten_nguoi_nhan], [sdt_nguoi_nhan], [dia_chi_nhan], [ngay_tao_don], [tinh_trang]) VALUES (N'004', N'Huy', 1, 30000, N'240', N'Huy', N'0765230162', N'240', CAST(N'2022-12-04' AS Date), 2)
+INSERT [dbo].[HoaDon] ([id_hd], [nguoi_thanh_toan], [so_luong_don], [tong_gia], [dia_chi_gui], [ten_nguoi_nhan], [sdt_nguoi_nhan], [dia_chi_nhan], [ngay_tao_don], [tinh_trang]) VALUES (N'005', N'Nha', 1, 40000, N'120', N'Nha', N'0987654321', N'123', CAST(N'2022-06-17' AS Date), 1)
+INSERT [dbo].[HoaDon] ([id_hd], [nguoi_thanh_toan], [so_luong_don], [tong_gia], [dia_chi_gui], [ten_nguoi_nhan], [sdt_nguoi_nhan], [dia_chi_nhan], [ngay_tao_don], [tinh_trang]) VALUES (N'006', N'Nha', 1, 50000, N'120', N'Nha', N'0987654321', N'123', CAST(N'2022-06-17' AS Date), 2)
+INSERT [dbo].[HoaDon] ([id_hd], [nguoi_thanh_toan], [so_luong_don], [tong_gia], [dia_chi_gui], [ten_nguoi_nhan], [sdt_nguoi_nhan], [dia_chi_nhan], [ngay_tao_don], [tinh_trang]) VALUES (N'007', N'Nha', 1, 600000, N'120', N'Nha', N'0987654321', N'123', CAST(N'2022-06-17' AS Date), 1)
+GO
