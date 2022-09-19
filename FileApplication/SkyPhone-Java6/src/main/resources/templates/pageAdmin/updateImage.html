@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>SkyPhone - Update Image</title>
+	<!-- base:css -->
+	<link rel="stylesheet" href="/css/cssAdmin/typicons.css">
+	<!-- endinject -->
+	<!-- inject:css -->
+	<link rel="stylesheet" href="/css/cssAdmin/style.css">
+	<!-- endinject -->
+	<link rel="shortcut icon" href="/images/logoJava5-removeBg.png" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.1.2/typicons.min.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+</head>
+
+<body>
+	<script th:inline="javascript">
+		if ("[(${message})]" != "") {
+			alert("[(${message})]");
+		}
+	</script>
+	<div class="container-scroller">
+		<!-- Nav -->
+		<div th:insert="~{/layOut/navAdmin.html}"></div>
+		<!-- End Nav -->
+		<div class="container-fluid page-body-wrapper">
+			<!-- SettingColor -->
+			<div th:insert="~{/layOut/settingColor.html}"></div>
+			<!-- partial SidebarAdmin-->
+			<div th:insert="~{/layOut/sidebarAdmin.html}"></div>
+			<!-- partial -->
+			<div class="main-panel">
+				<div class="content-wrapper">
+					<div class="row">
+						<div class="col-12 grid-margin">
+							<div class="card">
+								<div class="card-body">
+									<h4 class="card-title">Sản phẩm đang cập nhật ảnh</h4>
+									<hr>
+									<form enctype='multipart/form-data'
+										th:action="@{'/skyPhone/image/add/' + ${dienThoai?.id_dt}}" class="form-sample">
+										<div class="row">
+											<div class="text-left col-lg-7">
+												[(${dienThoai?.ten_dt != null? dienThoai?.ten_dt:'Vui lòng chọn sản phẩm
+												cập nhật'})] / [(${dienThoai?.mau != null? dienThoai?.mau:''})] /
+												[(${dienThoai?.dung_luong != null ? dienThoai?.dung_luong:''})]
+											</div>
+											<div class="text-left col-lg-5">ID Sản phẩm:
+												[(${dienThoai?.id_dt != null? dienThoai?.id_dt:'Trang cập nhật ảnh sản
+												phẩm'})]
+											</div>
+										</div>
+										<div class="mt-5">
+											<div class="col-lg-12 m-auto text-center img-fluid">
+												<input type="file" id="file-input1" name="anhChinh"
+													accept="image/gif, image/jpeg, image/png, image/jpg"
+													onchange="readURL(this);"> <label for="file-input1"
+													class="file-label1 "> <img id="blah1" th:src="@{${mainImage}}"
+														alt="" name="mainImage" class="mainImg img-fluid" width="530"
+														height="510" />
+												</label> <br> <span class="text-center"> <span id="file-name1"></span>
+												</span>
+												<hr>
+											</div>
+											<div class="row canGiua">
+												<div>
+													<input type="file" id="file-input2" name="anhPhu1"
+														accept="image/gif, image/jpeg, image/png, image/jpg"
+														onchange="readURL1(this);"> <label for="file-input2"
+														class="file-label2"> <img id="blah2" th:src="@{${image1}}"
+															name="image1" alt="" width="130" height="130"
+															style="outline: none;" />
+													</label> <br> <span id="file-name2" style="font-size: 8px;"></span>
+												</div>
+												<br> <br>
+												<div>
+													<input type="file" id="file-input3" name="anhPhu2"
+														accept="image/gif, image/jpeg, image/png, image/jpg"
+														onchange="readURL2(this);"> <label for="file-input3"
+														class="file-label3"> <img id="blah3" th:src="@{${image2}}"
+															name="image2" alt="" width="130" height="130"
+															style="outline: none;" />
+													</label> <br> <span id="file-name3" style="font-size: 8px;"></span>
+												</div>
+												<br> <br>
+												<div>
+													<input type="file" id="file-input4" name="anhPhu3"
+														accept="image/gif, image/jpeg, image/png, image/jpg"
+														onchange="readURL3(this);"> <label for="file-input4"
+														class="file-label4"> <img id="blah4" th:src="@{${image3}}"
+															name="image3" alt="" width="130" height="130"
+															style="outline: none;" />
+													</label> <br> <span id="file-name4" style="font-size: 8px;"></span>
+												</div>
+											</div>
+										</div>
+										<div class="canGiua mt-5">
+											<button class="updateImage" type="submit" formmethod="POST"
+												style="background: linear-gradient(180deg, #d18d8d, #ff172e);">Cập
+												nhật ảnh vào sản phẩm</button>
+										</div>
+										<div class="text-center mt-3 text-warning">
+											<p>Ghi chú: Hãy chọn đủ ảnh yêu cầu không được để xót</p>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 grid-margin text-center" style="font-size: 22px;">Bạn có thể tiếp tục cập
+							nhật ảnh
+							của một số sản phẩm từ SkyPhone</div>
+
+						<div class="col-lg-12 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body">
+									<div class="text-center">
+										<h4 class="card-title">Sản phẩm có thể cập nhật lại ảnh</h4>
+										<p class="card-description">
+											Cập nhật ảnh
+											<code>sản phẩm</code>
+										</p>
+										<p>Các sản phẩm này đã ngừng được bán bạn có thể cập nhật
+											lại ảnh !</p>
+									</div>
+									<div class="table-responsive">
+										<table class="table table-striped">
+											<thead>
+												<tr>
+													<th>Tên Sản phẩm</th>
+													<th>Giá</th>
+													<th>Ảnh hiện có</th>
+													<th>Trạng thái</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr th:each="item, index : ${sanPham}">
+													<td>[(${item?.ten_dt})]/[(${item?.mau})]/[(${item?.dung_luong})]
+													</td>
+													<td class="text-danger">[(${item?.gia})]</td>
+													<td>[(${soLuongAnh.get(index.index)})]</td>
+													<td>
+														<form th:action="@{'/skyPhone/image/' + ${item?.id_dt}}"
+															method="post">
+															<button class="update"
+																th:formaction="@{'/skyPhone/image/' + ${item?.id_dt}}"
+																type="submit">Cập nhật ảnh</button>
+														</form>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!-- content-wrapper ends -->
+				<!-- Footer -->
+				<div th:insert="~{/layOut/footerAdmin.html}"></div>
+			</div>
+			<!-- main-panel ends -->
+		</div>
+		<!-- page-body-wrapper ends -->
+	</div>
+	<!-- container-scroller -->
+	<script src="/js/jsAdmin/vendor.bundle.base.js"></script>
+	<script src="/js/jsAdmin/off-canvas.js"></script>
+	<script src="/js/jsAdmin/hoverable-collapse.js"></script>
+	<script src="/js/jsAdmin/template.js"></script>
+	<script src="/js/jsAdmin/settings.js"></script>
+	<script src="/js/jsAdmin/todolist.js"></script>
+	<script src="/js/jsAdmin/uploadFile.js"></script>
+</body>
+
+</html>

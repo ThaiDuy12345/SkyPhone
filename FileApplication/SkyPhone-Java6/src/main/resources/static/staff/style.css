@@ -1,0 +1,106 @@
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+body .staffContainer {
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #f7f7f7;
+}
+body .staffContainer nav {
+  min-height: 10%;
+  font-size: 20px;
+  color: white;
+  background-color: #346994;
+}
+body .staffContainer .category {
+  position: absolute;
+  box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.281);
+  left: -13%;
+  height: 100%;
+  width: 15%;
+  background-color: #447ba8;
+  transition: 0.5s;
+  z-index: 1;
+}
+body .staffContainer .category .categoryItem {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 17px;
+  transition: 0.5s;
+}
+body .staffContainer .category .categoryItem:hover {
+  text-decoration: none;
+  background-color: #346994;
+}
+body .staffContainer .mainContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  float: right;
+  padding: 10px;
+  width: 98%;
+  height: auto;
+}
+body .staffContainer .mainContent .centerText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .staffContainer .mainContent .theContent {
+  padding: 50px;
+  background-color: rgb(255, 255, 255);
+}
+body .staffContainer .mainContent .theContent .contentTitle {
+  font-size: 40px;
+}
+body .staffContainer .mainContent .theContent .contentList div {
+  border: none;
+  padding: 0;
+}
+body .staffContainer .mainContent .theContent .contentList div .card-header {
+  padding: 10px;
+  font-size: 17px;
+}
+body .staffContainer .mainContent .theContent .contentList div .card-body {
+  font-size: 25px;
+}
+body .staffContainer .mainContent .theContent .contentList div .card-footer button {
+  width: 100%;
+  height: 100%;
+  font-size: 23px;
+  background-color: #447ba8;
+  border: none;
+  padding: 10px;
+  color: white;
+  transition: 0.5s;
+}
+body .staffContainer .mainContent .theContent .contentList div .card-footer button:hover {
+  background-color: #346994;
+}
+body .staffContainer .mainContent .theContent .contentList div .card-footer button:enabled {
+  outline: none;
+}
+body .staffContainer .mainContent .theContent .contentList div .card-footer button:disabled {
+  background-color: gray;
+}
+body .staffContainer .mainContent .theContent .contentList div i {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #346994;
+  border-radius: 50%;
+  font-size: 35px;
+  color: white;
+}/*# sourceMappingURL=style.css.map */

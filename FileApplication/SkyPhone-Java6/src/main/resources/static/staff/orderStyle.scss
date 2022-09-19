@@ -1,0 +1,183 @@
+@mixin center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+$main-color: #346994;
+$second-color: #447ba8;
+.centerComponent{
+    @include center;
+}
+.mainContent{
+    .theContent{
+        min-width:100%;
+        background-color:none;
+        .orderTitle{
+            background-color:white;
+            font-size:20px;
+            font-weight:bold;
+        }
+        .orderTable{
+            padding:0;
+            table.table{
+                border:1px solid lightgray;
+                font-size:14px;
+                .tableButton{
+                    border-radius:15px;
+                    background-color: $main-color;
+                    color:white;
+                    border: none;
+                    transition:0.5s;
+                    width:100%;
+                    font-size:15px;
+                    height:100%;
+                    padding:5px 30px;
+                    &:hover{
+                        background-color: $second-color;
+                        text-decoration: none;
+                    }
+                    &:enabled{
+                        outline:none;
+                    }
+                }
+                td, th{
+                    text-align:center;
+                }
+                tbody{
+                    border:none;
+                    tr{
+                        transition:0.5s;
+                        &:nth-child(2n+3), &:first-child{
+                            background-color:rgb(251, 251, 251);
+                        }
+                    }
+                    .orderID{
+                        font-weight: light;
+                        color:rgb(53, 93, 106);
+                    }
+                    .waiting{
+                        color:red;
+                    }
+                    .processing{
+                        color:blue;
+                    }
+                    .handled{
+                        color:green;
+                    }
+                }
+            }
+            .centerText{
+                button{
+                    border:none;
+                    padding:8px;
+                    color:white;
+                    background-color:gray;  
+                    transition:0.5s;
+                    &:hover{
+                        background-color:rgb(177, 177, 177);
+                    }
+                    &:disabled{
+                        background-color:rgb(61, 61, 61);
+                        color:gray;
+                    }
+                    &:enabled{
+                        outline:none;
+                    }
+                }
+            }
+        }
+    }
+    .orderWaitingContent{
+        background-color:white;
+        min-width:70%;
+        .orderWaitingContentTitle{
+            background-color:$main-color;
+            font-size:20px;
+            font-weight:bold;
+            color:white;
+            padding:10px;
+        }
+        .customerInfor{
+            color:gray;
+        }
+        .processButton{
+            color:white;
+            background-color: $main-color;
+            border:none;
+            padding:5px;
+            transition:0.5s;
+            &:hover{
+                background-color: $second-color;
+            }
+            &:enabled{
+                outline:none;
+            }
+        }
+        .cancelButton{
+            color:rgb(255, 255, 255);
+            background-color:rgb(169, 169, 169);
+            border:none;
+            padding:5px;
+            transition:0.5s;
+            &:hover{
+                background-color: rgb(128, 128, 128);
+            }
+            &:enabled{
+                outline:none;
+            }
+        }
+    }
+    .orderProcessingContent{
+        background-color:white;
+        .orderWaitingContentTitle{
+            background-color:$main-color;
+            font-size:20px;
+            font-weight:bold;
+            color:white;
+            padding:10px;
+        }
+        .customerInfor{
+            color:gray;
+        }
+        .processButton{
+            color:white;
+            background-color: $main-color;
+            border:none;
+            padding:5px;
+            transition:0.5s;
+            &:hover{
+                background-color: $second-color;
+            }
+            &:enabled{
+                outline:none;
+            }
+        }
+        .doneButton{
+            color:white;
+            background-color: rgb(81, 156, 81);
+            border:none;
+            padding:5px;
+            transition:0.5s;
+            font-weight:bold;
+            &:hover{
+                background-color: rgb(58, 125, 58);
+            }
+            &:enabled{
+                outline:none;
+            }
+        }
+        .cancelButton{
+            color:rgb(255, 255, 255);
+            background-color:rgb(169, 169, 169);
+            border:none;
+            padding:5px;
+            transition:0.5s;
+            &:hover{
+                background-color: rgb(128, 128, 128);
+            }
+            &:enabled{
+                outline:none;
+            }
+        }
+    }
+}

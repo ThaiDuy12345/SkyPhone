@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<div class="card-title">
+		<div style="color: black;">
+			<b style="font-size: 22px;">Đơn hàng đã mua gần đây</b> <br> <small><i
+					class="fa fa-info-circle text-primary mr-1" aria-hidden="true"></i>
+				Đây là danh sách đơn hàng bạn đã mua từ ngày 05/06/2021 đến
+				05/06/2022</small>
+		</div>
+	</div>
+	<table>
+		<thead class="text-secondary">
+			<tr>
+				<th>Mã đơn hàng</th>
+				<th class="text-center">Sản phẩm</th>
+				<th>Giá</th>
+				<th>Ngày đặt mua</th>
+				<th>Trạng thái</th>
+			</tr>
+		</thead>
+		<tbody th:each="itemhd : ${HD}">
+			<tr style="border-top:0.05px solid lightgray;border-bottom:0.05px solid lightgray">
+				<td class="py-1 p-2 text-primary">#[(${itemhd?.id_hd})]</td>
+				<td class="p-2">
+					<div th:each="itemhdct : ${itemhd?.getHDChiTiet()}" class="row">
+						<div class="col-3">
+							<a th:href="@{'/item/product/' + ${itemhdct?.dienThoai.id_dt}}"> <img
+									th:src="@{'/images/phone_images/' + ${itemhdct?.dienThoai.id_dt} + '/0.jpg'}"
+									class="img-fluid" width="400px" alt=""></a>
+						</div>
+						<div class="col-3" style="display: flex; justify-content: center; align-items:center">
+							<p class="text-danger">[(${itemhdct?.so_luong_don})]x</p>
+						</div>
+						<div class="col-6" style="display: flex; justify-content: center; align-items:center">
+							<p class="text-danger">[(${itemhdct?.dienThoai.ten_dt})]</p>
+						</div>
+					</div>
+				</td>
+				<td class="p-2">
+					<p class="text-danger">
+						[[${#numbers.formatDecimal(itemhd?.tong_gia,0,'COMMA',0,'POINT')}]]
+					</p>
+				</td>
+				<td class="p-2">
+					<p>
+						[(${itemhd?.ngay_tao_don})]
+					</p>
+				</td>
+				<td class="p-2">
+					<label th:if="${itemhd?.tinh_trang==2}" class="text-success">Đã giao thành công!</label>
+					<label th:if="${itemhd?.tinh_trang==0}" class="text-danger">Chưa giao!</label>
+					<label th:if="${itemhd?.tinh_trang==1}" class="text-warning">Đang xử lí!</label>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>

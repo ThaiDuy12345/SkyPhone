@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SkyPhone - Admin</title>
+    <!-- base:css -->
+    <link rel="stylesheet" href="/css/cssAdmin/typicons.css">
+    <!-- endinject -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/css/cssAdmin/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="/images/logoJava5-removeBg.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.1.2/typicons.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-controller="adminSkyPhone" ng-app="skyPhoneController">
+    <div class="container-scroller">
+        <!-- Nav -->
+        <div th:insert="~{/layOut/navAdmin.html}"></div>
+        <!-- End Nav -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- SettingColor -->
+            <div th:insert="~{/layOut/settingColor.html}"></div>
+            <!-- partial SidebarAdmin-->
+            <div th:insert="~{/layOut/sidebarAdmin.html}"></div>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Sản phẩm đang được bán</h4>
+                                    <p class="card-description">
+                                        Quản lý
+                                        <code>sản phẩm</code>
+                                    </p>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Tên Sản phẩm</th>
+                                                    <th>Dung lượng</th>
+                                                    <th>Màu</th>
+                                                    <th>Giá</th>
+                                                    <th>Trả góp</th>
+                                                    <th>Trạng thái</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="item in pager.itemsActive">
+                                                    <td><img src="/images/phone_images/{{item.id_dt}}/0.jpg" alt=""></td>
+                                                    <td>{{item.ten_dt}}</td>
+                                                    <td>{{item.dung_luong}}</td>
+                                                    <td>{{item.mau}}</td>
+                                                    <td class="text-danger">{{item.gia}}</td>
+                                                    <td>{{item.tra_gop}}%</td>
+                                                    <td>
+                                                        <label class="badge badge-success">Đang bán</label><br>
+                                                        <button class="cancel" ng-click="stopSkyPhone(item.id_dt)">Ngừng bán</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination pagination-sm mt-3">
+                                                <li class="page-item"><button class="page-link" ng-click="pager.first()">First</button></li>
+                                                <li class="page-item"><button class="page-link" ng-click="pager.prev()">Previous</button>
+                                                </li>
+                                                <li class="page-item"><button class="page-link" ng-click="pager.next()">Next</button>
+                                                </li>
+                                                <li class="page-item"><button class="page-link" ng-click="pager.last()">Last</button>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 grid-margin text-center" style="font-size: 18px;">Các sản phẩm tạm ngưng bán bạn có thể cập nhật chúng để hoàn thiện hơn</div>
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Sản phẩm tạm ngưng</h4>
+                                    <p class="card-description">
+                                        Quản lý
+                                        <code>sản phẩm</code>
+                                    </p>
+                                    <p class="card-description">Ghi chú: Click vào ảnh sản phẩm để cập nhật</p>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Tên Sản phẩm</th>
+                                                    <th>Dung lượng</th>
+                                                    <th>Màu</th>
+                                                    <th>Giá</th>
+                                                    <th>Trả góp</th>
+                                                    <th>Trạng thái</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="item in pagerUn.itemsUnActive">
+                                                    <td>
+                                                        <a href="/skyPhone/image/{{item.id_dt}}">
+                                                            <img src="/images/phone_images/{{item.id_dt}}/0.jpg" alt=""></a>
+                                                    </td>
+                                                    <td>{{item.ten_dt}}</td>
+                                                    <td>{{item.dung_luong}}</td>
+                                                    <td>{{item.mau}}</td>
+                                                    <td class="text-danger">{{item.gia}}
+                                                    </td>
+                                                    <td>{{item.tra_gop}}%</td>
+                                                    <td>
+                                                        <button class="add" ng-click="continueSkyPhone(item.id_dt)">Thêm vào</button><br>
+                                                        <a class="cancel badge badge-primary" href="/dienthoai/edit/{{item.id_dt}}">Chỉnh sửa</a>
+                                                    </td>
+                                                </tr>
+                                                </c:forEach>
+                                            </tbody>
+                                        </table>
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination pagination-sm mt-3">
+                                                <li class="page-item"><button class="page-link" ng-click="pagerUn.first()">First</button></li>
+                                                <li class="page-item"><button class="page-link" ng-click="pagerUn.prev()">Previous</button>
+                                                </li>
+                                                <li class="page-item"><button class="page-link" ng-click="pagerUn.next()">Next</button>
+                                                </li>
+                                                <li class="page-item"><button class="page-link" ng-click="pagerUn.last()">Last</button>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- Footer -->
+                <div th:insert="~{/layOut/footerAdmin.html}"></div>
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <script src="/js/jsAdmin/vendor.bundle.base.js"></script>
+    <script src="/js/jsAdmin/off-canvas.js"></script>
+    <script src="/js/jsAdmin/hoverable-collapse.js"></script>
+    <script src="/js/jsAdmin/template.js"></script>
+    <script src="/js/jsAdmin/settings.js"></script>
+    <script src="/js/jsAdmin/todolist.js"></script>
+    <script src="/js/managerProduct.js"></script>
+</body>
+
+</html>

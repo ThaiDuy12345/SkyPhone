@@ -1,0 +1,110 @@
+@mixin center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+$main-color: #346994;
+$second-color: #447ba8;
+body, html{
+    width:100%;
+    height: 100%;
+}
+body {
+    font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    .staffContainer{
+        margin:0 auto;
+        width:100%;
+        min-height: 100%;
+        overflow:hidden;
+        position:relative;
+        background-color: #f7f7f7;
+        nav{
+            min-height:10%;
+            font-size:20px;
+            color:white;
+            background-color: $main-color;
+        }
+        .category{
+            position:absolute;
+            box-shadow:2px 1px 3px rgba(0, 0, 0, 0.281); 
+            left:-13%;
+            height:100%;
+            width:15%;
+            background-color:$second-color;
+            transition:0.5s;
+            z-index:1;
+            .categoryItem{
+                color:white;
+                @include center;
+                padding:10px;
+                font-size:17px;
+                transition:0.5s;
+                &:hover{
+                    text-decoration:none;
+                    background-color: $main-color;
+                }
+            }
+        }
+        .mainContent{
+            @include center;
+            background:none;
+            float:right;
+            padding:10px;
+            width:98%;
+            height: auto;
+            .centerText{
+                @include center;
+            }
+            .theContent{
+                padding:50px;
+                background-color: rgb(255, 255, 255);
+                .contentTitle{
+                    font-size:40px;
+                }
+                .contentList{
+                    div{
+                        border:none;
+                        padding:0;
+                        .card-header{
+                            padding:10px;
+                            font-size:17px;
+                        }
+                        .card-body{
+                            font-size:25px;
+                        }
+                        .card-footer{
+                            button{
+                                width:100%;
+                                height:100%;
+                                font-size:23px;
+                                background-color:$second-color;
+                                border:none;
+                                padding: 10px;
+                                color:white;
+                                transition:0.5s;
+                                &:hover{
+                                    background-color:$main-color;
+                                }
+                                &:enabled{
+                                    outline: none;
+                                }
+                                &:disabled{
+                                    background-color:gray;
+                                }
+                            }
+                        }
+                        i{
+                            padding:10px;
+                            padding-left:20px;
+                            padding-right:20px;
+                            background:$main-color;
+                            border-radius:50%;
+                            font-size:35px;
+                            color:white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

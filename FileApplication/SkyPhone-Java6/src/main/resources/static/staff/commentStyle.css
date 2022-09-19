@@ -1,0 +1,58 @@
+.mainContent .theContent {
+  min-width: 100%;
+  background-color: none;
+}
+.mainContent .theContent .commentTitle {
+  background-color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+.mainContent .theContent .commentTable .comment {
+  box-shadow: 0 1px 2px rgb(182, 182, 182);
+  margin-bottom: 20px;
+}
+.mainContent .theContent .commentTable .comment .customerTitle {
+  font-size: 16px;
+  background-color: #346994;
+  color: white;
+  padding: 10px;
+}
+.mainContent .theContent .commentTable .comment .commentInfor {
+  margin: 0;
+  padding: 10px;
+}
+.mainContent .theContent .commentTable .comment .theComment {
+  margin: 0;
+  padding: 10px;
+}
+.mainContent .theContent .commentTable .comment .buttonComment {
+  margin: 0;
+  padding: 0;
+}
+.mainContent .theContent .commentTable .comment .buttonComment button {
+  background-color: rgb(242, 242, 242);
+  border: none;
+  font-size: 16px;
+  transition: 0.5s;
+  font-weight: bold;
+}
+.mainContent .theContent .commentTable .comment .buttonComment button:hover {
+  background-color: rgb(214, 214, 214);
+}
+.mainContent .theContent .centerText button {
+  border: none;
+  padding: 8px;
+  color: white;
+  background-color: gray;
+  transition: 0.5s;
+}
+.mainContent .theContent .centerText button:hover {
+  background-color: rgb(177, 177, 177);
+}
+.mainContent .theContent .centerText button:disabled {
+  background-color: rgb(61, 61, 61);
+  color: gray;
+}
+.mainContent .theContent .centerText button:enabled {
+  outline: none;
+}/*# sourceMappingURL=commentStyle.css.map */

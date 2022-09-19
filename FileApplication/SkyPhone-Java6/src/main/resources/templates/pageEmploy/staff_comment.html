@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhân viên</title>
+    <link rel="shortcut icon" href="/images/logoJava5-removeBg.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/staff/style.css" rel="stylesheet">
+    <link href="/staff/commentStyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <script>
+        function notification(text) {
+            alert(text);
+        }
+    </script>
+</head>
+
+<body ng-app="app">
+    <div class="staffContainer">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand text-light" href="#">SKYPHONE</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="text-light">More</span>
+            </button>
+            <div class="collapse row m-0 p-0 navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav col-lg">
+                    <li class="nav-item">
+                        <a class="text-light nav-link" href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="text-light nav-link" href="#">Báo cáo hỗ trợ</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav col-lg row m-0 p-0">
+                    <div class="col-12 text-right">
+                        <i class="fa fa-bell"></i>
+                        <span class="badge badge-danger">4</span>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+        <form class="category" onmouseover="showCategory(this)" onmouseout="closeCategory(this)">
+            <a href="/skyPhoneEmploy" class="categoryItem">
+                <i class="bi bi-house"></i> &ensp; Trang chủ
+            </a>
+            <a href="/skyPhoneEmploy/order" class="categoryItem">
+                <i class="bi bi-box-seam"></i> &ensp; Đơn hàng
+            </a>
+            <a href="/skyPhoneEmploy/comment" class="categoryItem">
+                <i class="bi bi-filter-square"></i> &ensp; Đánh giá
+            </a>
+        </form>
+        <div ng-controller="controller_employ_comment" class="mainContent">
+            <form class="theContent">
+                <div class="commentTitle mb-3">
+                    Đánh giá
+                </div>
+                <div class="commentTable">
+                    <div ng-if="danhGia.dg.length == 0" class="row">
+                        <h2 class="text-dark col-lg-12  text-center">Không có đánh giá cần duyệt</h2>
+                    </div>
+                    <div ng-repeat="item in danhGia.dg" class="comment row">
+                        <div class="customerTitle col-12">
+                            Khách hàng <b>{{item.sdt}}</b> đã đánh giá
+                        </div>
+                        <div class="commentInfor col-4 row">
+                            <div class="col-12">Sản phẩm đánh giá: <a
+                                    th:href="@{|/item/product/{{danhGia.dt[$index].id_dt}}|}">{{danhGia.dt[$index].ten_dt}}</a>
+                            </div>
+                            <div class="col-12">Loại: {{danhGia.dt[$index].mau}}/{{danhGia.dt[$index].dung_luong}}</div>
+                        </div>
+                        <div class="theComment col-7 row">
+                            <div class="col-12 font-weight-bold">Mô tả đánh giá:</div>
+                            <div class="col-12 font-italic">{{item.noi_dung}}</div>
+                        </div>
+                        <div class="buttonComment col-12 row">
+                            <div class="col-12 mb-2"><button ng-click="pheDuyet(item.stt)"
+                                    class="p-2 w-100 h-100 m-auto" style="color:green">Phê
+                                    duyệt</button></div>
+                            <div class="col-12 mb-2"><button ng-click="huyBo(item.stt)" class="p-2 w-100 h-100 m-auto"
+                                    style="color:red">Huỷ
+                                    bỏ</button></div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="pageSize() != 0" class="centerText row">
+                    <button ng-click="pagingLeft()" ng-disabled="curPage == 0"
+                        class="col-lg-5 col-sm-12 m-lg-auto mb-sm-2">Trang trước đó</button>
+                    <button ng-click="pagingRight()" ng-disabled="curPage == pageSize() - 1 || pageSize() == 0"
+                        class="col-lg-5 col-sm-12 m-lg-auto mb-sm-2">Trang tiếp theo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="/staff/script.js"></script>
+<script src="/staff/restEmploy.js"></script>
+
+</html>

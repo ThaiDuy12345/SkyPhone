@@ -1,0 +1,175 @@
+.centerComponent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContent .theContent {
+  min-width: 100%;
+  background-color: none;
+}
+.mainContent .theContent .orderTitle {
+  background-color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+.mainContent .theContent .orderTable {
+  padding: 0;
+}
+.mainContent .theContent .orderTable table.table {
+  border: 1px solid lightgray;
+  font-size: 14px;
+}
+.mainContent .theContent .orderTable table.table .tableButton {
+  border-radius: 15px;
+  background-color: #346994;
+  color: white;
+  border: none;
+  transition: 0.5s;
+  width: 100%;
+  font-size: 15px;
+  height: 100%;
+  padding: 5px 30px;
+}
+.mainContent .theContent .orderTable table.table .tableButton:hover {
+  background-color: #447ba8;
+  text-decoration: none;
+}
+.mainContent .theContent .orderTable table.table .tableButton:enabled {
+  outline: none;
+}
+.mainContent .theContent .orderTable table.table td, .mainContent .theContent .orderTable table.table th {
+  text-align: center;
+}
+.mainContent .theContent .orderTable table.table tbody {
+  border: none;
+}
+.mainContent .theContent .orderTable table.table tbody tr {
+  transition: 0.5s;
+}
+.mainContent .theContent .orderTable table.table tbody tr:nth-child(2n+3), .mainContent .theContent .orderTable table.table tbody tr:first-child {
+  background-color: rgb(251, 251, 251);
+}
+.mainContent .theContent .orderTable table.table tbody .orderID {
+  font-weight: light;
+  color: rgb(53, 93, 106);
+}
+.mainContent .theContent .orderTable table.table tbody .waiting {
+  color: red;
+}
+.mainContent .theContent .orderTable table.table tbody .processing {
+  color: blue;
+}
+.mainContent .theContent .orderTable table.table tbody .handled {
+  color: green;
+}
+.mainContent .theContent .orderTable .centerText button {
+  border: none;
+  padding: 8px;
+  color: white;
+  background-color: gray;
+  transition: 0.5s;
+}
+.mainContent .theContent .orderTable .centerText button:hover {
+  background-color: rgb(177, 177, 177);
+}
+.mainContent .theContent .orderTable .centerText button:disabled {
+  background-color: rgb(61, 61, 61);
+  color: gray;
+}
+.mainContent .theContent .orderTable .centerText button:enabled {
+  outline: none;
+}
+.mainContent .orderWaitingContent {
+  background-color: white;
+  min-width: 70%;
+}
+.mainContent .orderWaitingContent .orderWaitingContentTitle {
+  background-color: #346994;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 10px;
+}
+.mainContent .orderWaitingContent .customerInfor {
+  color: gray;
+}
+.mainContent .orderWaitingContent .processButton {
+  color: white;
+  background-color: #346994;
+  border: none;
+  padding: 5px;
+  transition: 0.5s;
+}
+.mainContent .orderWaitingContent .processButton:hover {
+  background-color: #447ba8;
+}
+.mainContent .orderWaitingContent .processButton:enabled {
+  outline: none;
+}
+.mainContent .orderWaitingContent .cancelButton {
+  color: rgb(255, 255, 255);
+  background-color: rgb(169, 169, 169);
+  border: none;
+  padding: 5px;
+  transition: 0.5s;
+}
+.mainContent .orderWaitingContent .cancelButton:hover {
+  background-color: rgb(128, 128, 128);
+}
+.mainContent .orderWaitingContent .cancelButton:enabled {
+  outline: none;
+}
+.mainContent .orderProcessingContent {
+  background-color: white;
+}
+.mainContent .orderProcessingContent .orderWaitingContentTitle {
+  background-color: #346994;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 10px;
+}
+.mainContent .orderProcessingContent .customerInfor {
+  color: gray;
+}
+.mainContent .orderProcessingContent .processButton {
+  color: white;
+  background-color: #346994;
+  border: none;
+  padding: 5px;
+  transition: 0.5s;
+}
+.mainContent .orderProcessingContent .processButton:hover {
+  background-color: #447ba8;
+}
+.mainContent .orderProcessingContent .processButton:enabled {
+  outline: none;
+}
+.mainContent .orderProcessingContent .doneButton {
+  color: white;
+  background-color: rgb(81, 156, 81);
+  border: none;
+  padding: 5px;
+  transition: 0.5s;
+  font-weight: bold;
+}
+.mainContent .orderProcessingContent .doneButton:hover {
+  background-color: rgb(58, 125, 58);
+}
+.mainContent .orderProcessingContent .doneButton:enabled {
+  outline: none;
+}
+.mainContent .orderProcessingContent .cancelButton {
+  color: rgb(255, 255, 255);
+  background-color: rgb(169, 169, 169);
+  border: none;
+  padding: 5px;
+  transition: 0.5s;
+}
+.mainContent .orderProcessingContent .cancelButton:hover {
+  background-color: rgb(128, 128, 128);
+}
+.mainContent .orderProcessingContent .cancelButton:enabled {
+  outline: none;
+}/*# sourceMappingURL=orderStyle.css.map */

@@ -1,0 +1,88 @@
+body {
+	max-height: 700px;
+	background-color: rgba(243, 243, 243, 0.941);
+	min-width: 924px;
+}
+
+.active {
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+	background-color: #cae3fc;
+	color: rgb(66, 66, 216);
+	font-weight: bold;
+}
+
+.list-order {
+	padding: 7px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 16px;
+	font-family: sans-serif;
+	align-items: center;
+	display: flex;
+	margin-bottom: 15px;
+}
+
+.space {
+	width: 1px;
+	height: 20px;
+	margin-top: 5px;
+	margin-right: 15px;
+	margin-left: 15px;
+	background-color: #1E90FF;
+}
+
+.card {
+	padding: 25px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.sanPhamDt {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	max-height: 75px;
+	max-width: 400px;
+	text-overflow: ellipsis;
+	white-space: normal;
+	-webkit-line-clamp: 2;
+	line-height: 1.6rem;
+}
+
+.address {
+	display: inline-block;
+	padding: 1px 10px;
+	font-style: normal;
+	background-color: #f99406;
+	color: #fff;
+	margin: 2px 0 3px 0;
+	font-size: 12px;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.chinhSua {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-capNhat {
+	width: 400px;
+	padding: 10px;
+	background-color: #1E90FF;
+	color: white;
+	border-radius: 5px;
+	outline: none;
+	border: none;
+	font-size: 20px;
+	transition: all 0.4s;
+}
+
+.btn-capNhat:hover {
+	box-shadow: 0 0 10px rgb(177, 177, 177);
+}

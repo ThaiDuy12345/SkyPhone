@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>SkyPhone - BrandProduct</title>
+	<!-- base:css -->
+	<link rel="stylesheet" href="/css/cssAdmin/typicons.css">
+	<!-- endinject -->
+	<!-- inject:css -->
+	<link rel="stylesheet" href="/css/cssAdmin/style.css">
+	<!-- endinject -->
+	<link rel="shortcut icon" href="/images/logoJava5-removeBg.png" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.1.2/typicons.min.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+</head>
+
+<body>
+	<script th:inline="javascript">
+		if ("[(${message})]" != "") {
+			alert("[(${message})]");
+		}
+	</script>
+	<div class="container-scroller">
+		<!-- Nav -->
+		<div th:insert="~{/layOut/navAdmin.html}"></div>
+		<!-- End Nav -->
+		<div class="container-fluid page-body-wrapper">
+			<!-- SettingColor -->
+			<div th:insert="~{/layOut/settingColor.html}"></div>
+			<!-- partial SidebarAdmin-->
+			<div th:insert="~{/layOut/sidebarAdmin.html}"></div>
+			<!-- partial -->
+			<div class="main-panel">
+				<div class="content-wrapper">
+					<div class="row">
+						<div class="col-lg-12 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body">
+									<h4 class="card-title">Nhãn hàng của các sản phẩm</h4>
+									<p class="card-description">
+										Quản lý
+										<code>nhãn hàng sản phẩm</code>
+									</p>
+									<hr />
+									<div class=row>
+										<div class="col-lg-6 grid-margin stretch-card">
+											<form action="/brand/update" th:object="${item}" style="width: 100%;">
+												<div class="form-group">
+													<p class="card-description text-center">Tùy chỉnh nhãn
+														hàng</p>
+													<input type="text" th:field="*{ten_nhan_hang}"
+														class="form-control w-100" id="formGroupExampleInput2"
+														placeholder="Nhãn hàng khác" />
+													<div class="row mt-4"
+														style="display: flex; justify-content: center; align-items: center;">
+														<button formaction="/brand/create" class="btn btn-success">Thêm
+															vào nhãn hàng</button>
+														<button formaction="/brand/update"
+															class="btn btn-danger ml-3">Sửa nhãn hàng</button>
+													</div>
+												</div>
+											</form>
+										</div>
+										<div class="col-lg-6 grid-margin stretch-card">
+											<div class="table-responsive">
+												<p class="card-description text-center">Danh sách các
+													nhãn hàng của SkyPhone</p>
+												<table class="table table-hover">
+													<thead>
+														<tr>
+															<th>#</th>
+															<th>Tên nhãn hàng</th>
+															<th>Cập nhật</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr th:each="item : ${items}">
+															<td>[(${item?.id})]</td>
+															<td>[(${item?.ten_nhan_hang})]</td>
+															<td>
+																<form th:action="@{'/brand/edit/' + ${item?.id}}"
+																	method="post">
+																	<button
+																		th:formaction="@{'/brand/edit/' + ${item?.id}}"
+																		class="cancel">Chỉnh sửa</button>
+																</form>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<nav aria-label="Page navigation example"
+													style="display: flex; justify-content: center; align-items: center;">
+													<ul class="pagination pagination-sm mt-3">
+														<li class="page-item"><a class="page-link"
+																href="/SkyPhone/brand/page?p=0">First</a></li>
+														<li class="page-item"><a class="page-link"
+																href="/SkyPhone/brand/page?p=">Previous</a>
+														</li>
+														<li class="page-item"><a class="page-link"
+																href="/SkyPhone/brand/page?p=">Next</a>
+														</li>
+														<li class="page-item"><a class="page-link"
+																href="/SkyPhone/brand/page?p=">Last</a>
+														</li>
+													</ul>
+												</nav>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- content-wrapper ends -->
+				<!-- Footer -->
+				<div th:insert="~{/layOut/footerAdmin.html}"></div>
+			</div>
+			<!-- main-panel ends -->
+		</div>
+		<!-- page-body-wrapper ends -->
+	</div>
+	<script src="/js/jsAdmin/vendor.bundle.base.js"></script>
+	<script src="/js/jsAdmin/off-canvas.js"></script>
+	<script src="/js/jsAdmin/hoverable-collapse.js"></script>
+	<script src="/js/jsAdmin/template.js"></script>
+	<script src="/js/jsAdmin/settings.js"></script>
+	<script src="/js/jsAdmin/todolist.js"></script>
+</body>
+
+</html>
